@@ -1,0 +1,420 @@
+/* =========================================
+   RESET & VARIABLE
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --galaxy-bg-1: #070d1f;
+    --galaxy-bg-2: #0d1733;
+    --galaxy-accent: #4a7dff;
+    --galaxy-accent-2: #7c5cff;
+    --galaxy-accent-soft: #9bb6ff;
+    --galaxy-glow: rgba(74, 125, 255, 0.35);
+    --galaxy-text: #eaf0ff;
+    --galaxy-text-muted: #a3b0d6;
+    --galaxy-card: #101a3d;
+    --galaxy-card-2: #0c1432;
+    --galaxy-border: rgba(123, 160, 255, 0.14);
+}
+
+/* =========================================
+   BODY & BACKGROUND GALAXY
+   ========================================= */
+body {
+    font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--galaxy-bg-1);
+    background-image:
+        radial-gradient(1px 1px at 12% 22%, rgba(255,255,255,0.7), transparent),
+        radial-gradient(1px 1px at 27% 68%, rgba(255,255,255,0.5), transparent),
+        radial-gradient(1px 1px at 48% 15%, rgba(255,255,255,0.4), transparent),
+        radial-gradient(1px 1px at 68% 82%, rgba(255,255,255,0.6), transparent),
+        radial-gradient(1px 1px at 82% 32%, rgba(255,255,255,0.5), transparent),
+        radial-gradient(1.5px 1.5px at 35% 45%, rgba(155,182,255,0.7), transparent),
+        radial-gradient(ellipse 800px 500px at 10% 0%, rgba(74, 125, 255, 0.15), transparent 60%),
+        radial-gradient(ellipse 700px 500px at 90% 100%, rgba(124, 92, 255, 0.14), transparent 60%),
+        linear-gradient(180deg, var(--galaxy-bg-1) 0%, var(--galaxy-bg-2) 50%, var(--galaxy-bg-1) 100%);
+    background-attachment: fixed;
+    color: var(--galaxy-text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* =========================================
+   NAVBAR
+   ========================================= */
+.navbar {
+    background: rgba(7, 13, 31, 0.85);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--galaxy-border);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.navbar-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+    background: linear-gradient(120deg, var(--galaxy-accent-soft), #ffffff, var(--galaxy-accent-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+    display: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--galaxy-text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.nav-links a:hover {
+    color: var(--galaxy-accent-soft);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--galaxy-accent), var(--galaxy-accent-2));
+    transition: width 0.35s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.hamburger-icon {
+    background: none;
+    border: none;
+    color: var(--galaxy-accent-soft);
+    cursor: pointer;
+    padding: 0.5rem;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.hamburger-icon:hover {
+    color: #ffffff;
+}
+
+/* =========================================
+   MOBILE MENU
+   ========================================= */
+.mobile-menu {
+    background: rgba(10, 17, 40, 0.98);
+    border-top: 1px solid var(--galaxy-border);
+    backdrop-filter: blur(12px);
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.mobile-menu.hidden {
+    display: none;
+}
+
+.mobile-menu a {
+    color: var(--galaxy-text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu a:hover {
+    color: var(--galaxy-accent-soft);
+    background: rgba(74, 125, 255, 0.10);
+    padding-left: 1.5rem;
+}
+
+/* =========================================
+   HEADER
+   ========================================= */
+.header {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    background:
+        radial-gradient(ellipse 600px 300px at 50% 100%, rgba(74, 125, 255, 0.12), transparent 70%),
+        linear-gradient(180deg, rgba(26, 38, 82, 0.25) 0%, transparent 100%);
+    border-bottom: 1px solid var(--galaxy-border);
+}
+
+.text-clamp-title {
+    font-size: clamp(1.6rem, 4.2vw, 2.6rem);
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 1rem;
+    background: linear-gradient(120deg, #ffffff, var(--galaxy-accent-soft), var(--galaxy-accent-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text-clamp-desc {
+    font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+    color: var(--galaxy-text-muted);
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   MAIN & GRID
+   ========================================= */
+.main-container {
+    flex-grow: 1;
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr;              /* Mobile: 1 kolom */
+    gap: 1.5rem;
+}
+
+/* =========================================
+   CARD
+   ========================================= */
+.card {
+    background: linear-gradient(160deg, var(--galaxy-card) 0%, var(--galaxy-card-2) 100%);
+    border: 1px solid var(--galaxy-border);
+    border-radius: 18px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(155, 182, 255, 0.45);
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.5),
+        0 0 30px var(--galaxy-glow);
+}
+
+/* Wrapper gambar — background PUTIH */
+.product-image-wrapper {
+    width: 100%;
+    height: 210px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: #ffffff;
+    border-bottom: 1px solid var(--galaxy-border);
+    overflow: hidden;
+}
+
+.product-image-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.10));
+}
+
+.card:hover .product-image-wrapper img {
+    transform: scale(1.08);
+}
+
+/* Body card */
+.card-body {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-category {
+    color: var(--galaxy-accent-soft);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+}
+
+.product-title {
+    color: var(--galaxy-text);
+    font-weight: 700;
+    font-size: 1.1rem;
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.card:hover .product-title {
+    color: #ffffff;
+}
+
+.product-desc {
+    color: var(--galaxy-text-muted);
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.product-price {
+    color: var(--galaxy-accent-soft);
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: 0.3px;
+}
+
+/* =========================================
+   TOMBOL BELI
+   ========================================= */
+.btn-galaxy {
+    background: rgba(74, 125, 255, 0.10);
+    color: var(--galaxy-accent-soft);
+    border: 1px solid rgba(74, 125, 255, 0.35);
+    padding: 0.55rem 1.1rem;
+    border-radius: 10px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.35s ease;
+    font-family: inherit;
+}
+
+.btn-galaxy:hover {
+    background: linear-gradient(135deg, var(--galaxy-accent), var(--galaxy-accent-2));
+    color: #ffffff;
+    border-color: transparent;
+    box-shadow: 0 6px 20px var(--galaxy-glow);
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+.footer {
+    background: rgba(7, 13, 31, 0.85);
+    border-top: 1px solid var(--galaxy-border);
+    backdrop-filter: blur(10px);
+    margin-top: 3rem;
+}
+
+.footer-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+}
+
+.footer p {
+    color: var(--galaxy-text-muted);
+    font-size: 0.875rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-links a {
+    color: var(--galaxy-text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.875rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--galaxy-accent-soft);
+}
+
+/* =========================================
+   RESPONSIVE — BREAKPOINT 1: TABLET (≥640px)
+   ========================================= */
+@media (min-width: 640px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);   /* Tablet: 2 kolom */
+    }
+
+    .footer-container {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+}
+
+/* =========================================
+   RESPONSIVE — BREAKPOINT 2: DESKTOP (≥1024px)
+   ========================================= */
+@media (min-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(4, 1fr);   /* Desktop: 4 kolom */
+    }
+
+    .nav-links {
+        display: flex;                          /* Tampilkan menu desktop */
+    }
+
+    .hamburger-icon {
+        display: none;                          /* Sembunyikan hamburger */
+    }
+}
+
+/* =========================================
+   RESPONSIVE TWEAKS
+   ========================================= */
+@media (max-width: 640px) {
+    .product-image-wrapper {
+        height: 190px;
+    }
+}

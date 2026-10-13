@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Produk Audio - Tugas Rutin 3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ============ NAVBAR ============ -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="brand-logo">✦ AudioStore</a>
+
+            <!-- Menu Desktop -->
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Produk</a>
+                <a href="#">Tentang</a>
+            </div>
+
+            <!-- Tombol Hamburger -->
+            <button id="mobile-menu-btn" class="hamburger-icon" aria-label="Menu">
+                <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="mobile-menu hidden">
+            <a href="#">Home</a>
+            <a href="#">Produk</a>
+            <a href="#">Tentang</a>
+        </div>
+    </nav>
+
+    <!-- ============ HEADER ============ -->
+    <header class="header">
+        <h1 class="text-clamp-title">Katalog Produk Audio</h1>
+        <p class="text-clamp-desc">
+            Temukan kualitas suara terbaik dengan koleksi Headset, TWS, dan Earphone pilihan kami.
+        </p>
+    </header>
+
+    <!-- ============ MAIN: KATALOG ============ -->
+    <main class="main-container">
+        <div class="product-grid">
+
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="product-image-wrapper">
+                    <img src="images/produk1.jpg" alt="Headset Gaming RGB">
+                </div>
+                <div class="card-body">
+                    <span class="product-category">Headset</span>
+                    <h3 class="product-title">ProGamer RGB X1</h3>
+                    <p class="product-desc">Headset over-ear dengan LED RGB, surround sound 7.1 dan mikrofon noise-cancelling.</p>
+                    <div class="card-footer">
+                        <span class="product-price">Rp 850.000</span>
+                        <button class="btn-galaxy">Beli</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="product-image-wrapper">
+                    <img src="images/produk2.jpg" alt="TWS Premium">
+                </div>
+                <div class="card-body">
+                    <span class="product-category">TWS</span>
+                    <h3 class="product-title">AirBuds Pro 2</h3>
+                    <p class="product-desc">TWS dengan active noise cancelling, baterai tahan 24 jam, dan Bluetooth 5.3.</p>
+                    <div class="card-footer">
+                        <span class="product-price">Rp 1.200.000</span>
+                        <button class="btn-galaxy">Beli</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="product-image-wrapper">
+                    <img src="images/produk3.jpg" alt="Headset Studio">
+                </div>
+                <div class="card-body">
+                    <span class="product-category">Headset</span>
+                    <h3 class="product-title">Studio Monitor H5</h3>
+                    <p class="product-desc">Headset monitoring profesional untuk mixing audio dan produksi musik.</p>
+                    <div class="card-footer">
+                        <span class="product-price">Rp 2.100.000</span>
+                        <button class="btn-galaxy">Beli</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card">
+                <div class="product-image-wrapper">
+                    <img src="images/produk4.jpg" alt="Headset Wireless Biru">
+                </div>
+                <div class="card-body">
+                    <span class="product-category">Headset</span>
+                    <h3 class="product-title">SoundCore Q30</h3>
+                    <p class="product-desc">Headset wireless ringan dengan hybrid ANC dan baterai tahan hingga 40 jam.</p>
+                    <div class="card-footer">
+                        <span class="product-price">Rp 1.350.000</span>
+                        <button class="btn-galaxy">Beli</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="card">
+                <div class="product-image-wrapper">
+                    <img src="images/produk5.jpg" alt="TWS Sport">
+                </div>
+                <div class="card-body">
+                    <span class="product-category">TWS</span>
+                    <h3 class="product-title">SportFit Earbuds</h3>
+                    <p class="product-desc">Desain ear-hook anti jatuh, tahan air IPX7, cocok untuk olahraga dan lari.</p>
+                    <div class="card-footer">
+                        <span class="product-price">Rp 450.000</span>
+                        <button class="btn-galaxy">Beli</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="card">
+                <div class="product-image-wrapper">
+                    <img src="images/produk6.jpg" alt="TWS LED Display">
+                </div>
+                <div class="card-body">
+                    <span class="product-category">TWS</span>
+                    <h3 class="product-title">LiteBuds LED</h3>
+                    <p class="product-desc">TWS dengan layar LED indikator baterai, suara seimbang dan harga terjangkau.</p>
+                    <div class="card-footer">
+                        <span class="product-price">Rp 250.000</span>
+                        <button class="btn-galaxy">Beli</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="card">
+                <div class="product-image-wrapper">
+                    <img src="images/produk7.jpg" alt="Earphone Type-C">
+                </div>
+                <div class="card-body">
+                    <span class="product-category">Earphone</span>
+                    <h3 class="product-title">ClearSound Type-C</h3>
+                    <p class="product-desc">Earphone kabel dengan konektor Type-C, dilengkapi kontrol volume dan mikrofon.</p>
+                    <div class="card-footer">
+                        <span class="product-price">Rp 120.000</span>
+                        <button class="btn-galaxy">Beli</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="card">
+                <div class="product-image-wrapper">
+                    <img src="images/produk8.jpg" alt="Headset Wireless Cream">
+                </div>
+                <div class="card-body">
+                    <span class="product-category">Headset</span>
+                    <h3 class="product-title">Freedom Wireless</h3>
+                    <p class="product-desc">Headset on-ear nirkabel dengan baterai 40 jam dan desain lipat portabel.</p>
+                    <div class="card-footer">
+                        <span class="product-price">Rp 950.000</span>
+                        <button class="btn-galaxy">Beli</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2026 AudioStore. Tugas Rutin 3 - Pemrograman Web.</p>
+            <div class="footer-links">
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+                <a href="#">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============ SCRIPT ============ -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
